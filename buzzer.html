@@ -1,0 +1,26 @@
+<head>
+  <title>buzzer</title>
+</head>
+
+<body>
+  {{> buzzes}}
+  {{> buzzer}}
+</body>
+
+<template name="buzzer">
+<div style="float:left">
+  <div><label>Your team name</label><input name="player-name"></input></div>
+  <div><button class='buzz' style="font-size:250pt;">BUZZ</button></div>
+</div>
+</template>
+
+<template name="buzzes">
+<div style="float:left;width:200px;height:100%;">
+  <button class='reset'>RESET</button>
+  <ul>
+  {{#each allBuzzes}}
+  <li>{{name}}</li>
+  {{/each}}
+  </ul>
+</div>
+</template>
