@@ -26,4 +26,13 @@ if (Meteor.isServer) {
       }
     })
   });
+
+  Buzzes.allow({
+    insert: function() {
+      if (Buzzes.find().count() > 0)
+        return false
+      else 
+        return true
+    }
+  })
 }
