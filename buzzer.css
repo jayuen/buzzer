@@ -1,1 +1,8 @@
 /* CSS declarations go here */
+.loser {
+  background-color: none;
+}
+
+.winner {
+  background-color: green;
+}

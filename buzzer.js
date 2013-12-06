@@ -10,9 +10,21 @@ if (Meteor.isClient) {
     }
   });
 
+  function getPlayerName() {
+    return $("input[name='player-name']").val()
+  }
+
+  Template.buzzer.result = function() {
+    var winner = Buzzes.findOne()
+    if (winner === undefined) return undefined
+
+    var isWinner = Buzzes.findOne().name === getPlayerName()
+    return (result = (isWinner) ? "winner" : "loser")
+  }
+
   Template.buzzer.events({
     'click button.buzz' : function () {
-      var name = $("input[name='player-name']").val()
+      var name = getPlayerName()
       Buzzes.insert({name: name})
     }
   });
