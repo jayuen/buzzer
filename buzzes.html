@@ -1,0 +1,11 @@
+<template name="buzzes">
+<div style="float:left;width:200px;height:100%;">
+  Who buzzed first?
+  <button class='reset'>RESET</button>
+  <ul>
+  {{#each allBuzzes}}
+  <li>{{name}}</li>
+  {{/each}}
+  </ul>
+</div>
+</template>

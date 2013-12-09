@@ -1,5 +1,12 @@
 var Buzzes = new Meteor.Collection("buzzes")
+
+
 if (Meteor.isClient) {
+  Meteor.Router.add({
+    '/buzzer' : 'buzzer',
+    '/buzzes' : 'buzzes'
+  })
+
   Template.buzzes.allBuzzes = function() {
     return Buzzes.find()
   }
